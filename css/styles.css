@@ -1,0 +1,306 @@
+/* 页面全局设置 */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    overflow-x: hidden;
+    color: #fff;
+    background-color: #000;
+}
+
+/* 视频背景 */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+video#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 欢迎屏幕 */
+.welcome-screen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.welcome-text {
+    font-size: 4em;
+    background: linear-gradient(90deg, #00ffff, #0011ff, #ff00ff);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: text-flow 3s infinite;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #0011ff;
+}
+
+@keyframes text-flow {
+    0% { background-position: 0%; }
+    100% { background-position: 100%; }
+}
+
+.enter-button {
+    background: #00ffff;
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: 0.3s;
+    text-shadow: 0 0 5px #ff00ff;
+    margin-top: 20px;
+}
+
+.enter-button:hover {
+    background: #ff00ff;
+    color: #fff;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+}
+
+/* 作品栏 */
+.portfolio {
+    padding: 50px;
+    text-align: center;
+    background-color: #111;
+}
+
+.portfolio-title {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #ff00ff;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.portfolio-item {
+    padding: 20px;
+    background: #222;
+    color: #00ffff;
+    box-shadow: 0 0 10px #00ffff, 0 0 15px #ff00ff;
+    transition: 0.3s;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00ffff, 0 0 30px #ff00ff;
+}
+
+/* 视频作品栏 */
+.video-section {
+    padding: 50px;
+    background-color: #000;
+}
+
+.video-section h2 {
+    font-size: 2.5em;
+    text-align: center;
+    color: #00ffff;
+}
+
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.video-container video {
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 20px #00ffff;
+}
+
+/* 社交媒体 */
+.social-media {
+    text-align: center;
+    padding: 50px;
+    background-color: #111;
+    color: #fff;
+}
+
+.social-media h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ff00ff;
+}
+
+/* 隐藏内容，点击按钮后显示 */
+.hidden {
+    display: none;
+}
+/* 作品展示区域样式 */
+.portfolio {
+    padding: 50px;
+    text-align: center;
+    background-color: #111;
+}
+
+.portfolio-title {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+}
+
+/* 瀑布流三列布局，调整为适合小尺寸作品的布局 */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* 单个作品卡片样式，调整大小 */
+.portfolio-item {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    background: #222;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+    transition: 0.3s;
+    border-radius: 10px;
+    max-width: 250px; /* 设置最大宽度，使作品展示小一些 */
+    margin: 0 auto; /* 使作品居中 */
+}
+
+/* 图片样式，设置固定的宽高比 */
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    max-height: 150px; /* 限制图片高度 */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px #00ffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 作品描述样式 */
+.portfolio-item p {
+    color: #fff;
+    font-size: 0.9em;
+    margin-top: 5px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* 悬停效果 */
+.portfolio-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #ff00ff, 0 0 25px #00ffff;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ff00ff, 0 0 30px #00ffff;
+}
+/* 单列模式布局 */
+.portfolio.single-column {
+    padding: 50px;
+    background-color: #111;
+    text-align: center;
+}
+
+.portfolio-item {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+    overflow: hidden; /* 防止图片超出容器 */
+}
+
+.portfolio-item img {
+    width: auto; /* 保持图片原始宽高比例 */
+    max-width: 100%; /* 确保图片不会超出容器宽度 */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #00ffff;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 注释说明样式 */
+.caption {
+    color: #fff;
+    text-align: left;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.caption h3 {
+    color: #ff00ff;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+.caption p {
+    color: #ccc;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+/* 单列模式布局 - 视频展示 */
+.video-section.single-column {
+    padding: 50px;
+    background-color: #111;
+    text-align: center;
+}
+
+.video-item {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+    overflow: hidden;
+}
+
+.video-item video {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #00ffff;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 注释说明样式 */
+.caption {
+    color: #fff;
+    text-align: left;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.caption h3 {
+    color: #ff00ff;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+.caption p {
+    color: #ccc;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
